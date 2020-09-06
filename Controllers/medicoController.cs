@@ -22,8 +22,20 @@ namespace CitasBaack.Controllers
 
             try
             {
-                List<MEDICO> todos = medicoBLL.List();
-                return Ok(todos);
+                using (CitasMedicasEntities1 db = new CitasMedicasEntities1())
+                {
+                    try
+                    {
+                        List<getMedicos_Result> todos = reporte.getMedicos();
+                        return Content(HttpStatusCode.OK, todos);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error al enviar la lista de MEDICOs " + ex.Message);
+                        throw ex;
+                    }
+                }
             }
             catch (Exception ex)
             {
