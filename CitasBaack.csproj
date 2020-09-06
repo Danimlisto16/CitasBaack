@@ -186,6 +186,7 @@
     <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\medicoController.cs" />
     <Compile Include="Controllers\pacienteController.cs" />
+    <Compile Include="Controllers\reporteController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
