@@ -11,12 +11,14 @@ using System.Web.Http.Cors;
 
 namespace CitasBaack.Controllers
 {
+    [AllowAnonymous]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class medicoController : ApiController
     {
 
 
         //CORS
+
         public IHttpActionResult Get()
         {
 
@@ -26,7 +28,7 @@ namespace CitasBaack.Controllers
                 {
                     try
                     {
-                        List<getMedicos_Result> todos = reporte.getMedicos();
+                        List<listMedico1_Result> todos = medicoBLL.listMedico();
                         return Content(HttpStatusCode.OK, todos);
 
                     }
@@ -43,6 +45,8 @@ namespace CitasBaack.Controllers
                 throw ex;
             }
         }
+
+
 
         public IHttpActionResult Get(int id)
         {
